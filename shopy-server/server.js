@@ -5,6 +5,10 @@ app.use(express.json());
 
 const stripe = require('stripe')(process.env.SECRET_KEY);
 
+app.get('/wakeup', (req, res) => {
+  res.send('Hello');
+});
+
 app.post('/payment-sheet', async (req, res) => {
   try {
     const {
